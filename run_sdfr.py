@@ -77,7 +77,7 @@ def run_SDFR(args,sdf_net,center_scale_info,data_loader,result_file,refine_scale
         t_error_list.extend(t_error.numpy().tolist())
 
         pred_pose=np.zeros((R.shape[0],4,4))
-        pred_pose[3,3]=1
+        pred_pose[:,3,3]=1
         pred_pose[:,:3,:3]=R.detach().cpu().numpy()
         pred_pose[:,:3,3]=t.detach().cpu().numpy()
         if refine_scale:
