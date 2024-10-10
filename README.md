@@ -8,7 +8,24 @@ This repository will continue to be updated.
 ## Dataset Preparation 
 
 For quick start, you can download a small dataset [here](https://drive.google.com/file/d/1YDvhBv6z5SByF_WaTQVzzL9qz3TyEm6a/view?usp=drive_link) and unzip it in the current project directory.
-The full dataset will be uploaded soon. 
+
+To prepar the full dataset, you need to first download the mesh models from the BOP challenge(Specifically, we will use the models from models_eval). And put them with the following structure:
+```bash
+.
+├── datasets
+│   ├── models
+│   │   ├── lm
+│   │       └── models_info.json
+│   │       └── obj_000001.ply
+│   ├── render
+│   │   ...
+│   
+```
+Then run the following script to generate the datasets:
+```
+python prepare_dataset.py --root-dir [datasets path] --mode ['standard' 'noise','scale','diverse','corrupt'] 
+```
+The results will be saved in the render directory.
 ## Installation
 ```
 conda create -n sdfr python=3.8
