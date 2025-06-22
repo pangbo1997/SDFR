@@ -1,8 +1,11 @@
 # Fast and Accurate 6D Object Pose Refinement via Implicit Surface Optimization
+###  [Paper](https://ieeexplore.ieee.org/document/10970084) 
+<br/>
 
-Code for **Fast and Accurate 6D Object Pose Refinement via
-Implicit Surface Optimization**. 
-This repository will continue to be updated.
+> Fast and Accurate 6-D Object Pose Refinement via Implicit Surface Optimization Video                                                                            
+> Bo Pang, Deming Zhai, Jianan Zhen, Long Wang, Xianming Liu                             
+> IEEE Transactions on Robotics (2025)
+
 
 ## Installation
 ```
@@ -17,7 +20,7 @@ chmod +x build_ext.sh && ./build_ext.sh
 
 For quick start, you can download a small dataset [here](https://drive.google.com/file/d/1YDvhBv6z5SByF_WaTQVzzL9qz3TyEm6a/view?usp=drive_link) and unzip it in the current project directory.
 
-To prepar the full dataset, you need to first download the mesh models from the BOP challenge(Specifically, we will use the models from models_eval). And put them with the following structure:
+To prepar the full dataset, you need to first download the mesh models from the BOP challenge (Specifically, we will use the models from models_eval). And put them with the following structure:
 ```bash
 .
 ├── datasets
@@ -41,7 +44,7 @@ The results will be saved in the render directory.
 python run_sdfr.py --root-dir [datasets path] --mode ['standard' 'noise','scale','diverse','corrupt']
 ```
 ## Run the pipeline of FRICP
-Before starting, you need to access their official[repository ](https://github.com/yaoyx689/Fast-Robust-ICP)  to compile the executable file.
+Before starting, you need to access their official [repository ](https://github.com/yaoyx689/Fast-Robust-ICP)  to compile the executable file.
 ```
 python run_fricp.py --root-dir [datasets path] --mode ['standard' 'noise','scale','diverse','corrupt'] --method-no 3 --render
 ```
@@ -92,6 +95,25 @@ python run_fricp_simreal.py --root-dir [datasets path] --mode ['standard' 'noise
 
 python run_symmicp_simreal.py --root-dir [datasets path] --mode ['standard' 'noise','scale'] --render
 ```
+
+## Citation
+If you find this code useful for your research, please use the following BibTeX entry.
+
+```bibtex
+@ARTICLE{10970084,
+  author={Pang, Bo and Zhai, Deming and Zhen, Jianan and Wang, Long and Liu, Xianming},
+  journal={IEEE Transactions on Robotics}, 
+  title={Fast and Accurate 6-D Object Pose Refinement via Implicit Surface Optimization}, 
+  year={2025},
+  volume={41},
+  number={},
+  pages={3129-3142},
+  keywords={Three-dimensional displays;Point cloud compression;Solid modeling;Neural networks;Pose estimation;Accuracy;Annotations;Computational modeling;Optimization;Noise measurement;Implicit neural network (INN);signed distance field;6-D pose refinement},
+  doi={10.1109/TRO.2025.3562484}}
+
+```
+
+
 ## Acknowledgements
 
 We would like to thank the authors of the following repository for their great work
